@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <nav>
+        <div class="heading">Task Manager</div>
+        <button class="nav-create-task">Create Task</button>
+      </nav>
+      <div class="tasks"></div>
+      <div class="form">
+        <h1 id="form-back-btn">X</h1>
+        <form>
+          <input type="text" placeholder="Type your task here" />
+          <label for="category">Select category of your task : </label>
+          <select name="category" id="category">
+            <option value="work">Work</option>
+            <option value="study">Study</option>
+            <option value="personal">Personal</option>
+            <option value="health">Health</option>
+            <option value="finance">Finance</option>
+            <option value="shopping">Shopping</option>
+            <option value="travel">Travel</option>
+            <option value="development">Development</option>
+            <option value="reading">Reading</option>
+            <option value="other">Other</option>
+          </select>
+          <button>Create</button>
+        </form>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
