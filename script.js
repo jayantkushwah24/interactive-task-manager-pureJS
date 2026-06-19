@@ -4,6 +4,15 @@ const tasksDiv = document.querySelector(".tasks");
 const taskStatus = document.querySelector(".task-status");
 const form = document.querySelector("form");
 const formBackBtn = document.querySelector("#form-back-btn");
+const themeBtn = document.querySelector("#theme-btn");
+
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+  document.body.classList.add("dark");
+  themeBtn.textContent = "☀️";
+} else {
+  themeBtn.textContent = "🌙";
+}
 
 let taskList = [];
 let taskIndex = null;
@@ -76,4 +85,11 @@ form.addEventListener("submit", (event) => {
   taskListRender();
   form.reset();
   formDiv.style.display = "none";
+});
+
+themeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  const darkMode = document.body.classList.contains("dark");
+  localStorage.setItem("theme", darkMode ? "dark" : "light");
+  themeBtn.textContent = darkMode ? "☀️" : "🌙";
 });
